@@ -68,7 +68,7 @@ public class USBHIDService extends AbstractUSBHIDService {
 		mLog("subclass " + showDecHex(device.getDeviceSubclass()));
 		mLog("protocol " + showDecHex(device.getDeviceProtocol()));
 		mLog("");
-		mLog("interfaces count " + device.getInterfaceCount());
+		mLog("interfaces count " + device.getInterfaceCount()); // TODO: NOTE: Each device can have one or more UsbInterfaces
 		for (int i = 0; i < device.getInterfaceCount(); i++) {
 			mLog("");
 			mLog("interface " + i);
@@ -79,7 +79,7 @@ public class USBHIDService extends AbstractUSBHIDService {
 			mLog(" subclass " + showDecHex(dInterface.getInterfaceSubclass()));
 			mLog(" protocol " + showDecHex(dInterface.getInterfaceProtocol()));
 			mLog("");
-			mLog(" endpoint count " + dInterface.getEndpointCount());
+			mLog(" endpoint count " + dInterface.getEndpointCount()); // TODO: NOTE: Each UsbInterface can have one or more UsbEndpoints
 			for (int ien = 0; ien < dInterface.getEndpointCount(); ien++) {
 				UsbEndpoint endpoint = dInterface.getEndpoint(ien);
 				mLog("");
